@@ -1,0 +1,9 @@
+spring:
+  application:
+    name:FramkyService
+
+server:
+  port: 9090
+
+DolarOff: 6.9
+
