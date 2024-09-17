@@ -6,11 +6,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class GreetingService {
 
+    @Value("${greeting.messages.en}")
+    private String defaultGreetingMessage;
 
-    @Value("${Saludo}")
-    private String SaludoOff;
+    @Value("${greeting.messages.es}")
+    private String spanishGreetingMessage;
 
-    public String getGreeting() {
-        return SaludoOff;
+    public String getGreeting(String language) {
+        switch (language.toLowerCase()) {
+            case "es":
+                return spanishGreetingMessage;
+            case "en":
+            default:
+                return defaultGreetingMessage;
+        }
+    }
+
+    public String getPersonalizedGreeting(String name, String language) {
+        String greetingMessage = getGreeting(language);
+        return String.format("%s, %s", name, greetingMessage);
     }
 }

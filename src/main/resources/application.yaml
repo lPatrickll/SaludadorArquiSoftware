@@ -7,4 +7,7 @@ server:
 
 DolarOff: 6.9
 
-Saludo: "Preguntate si lo que estas haciendo hoy te acerca al lugar en el que quieres estar manana"
+greeting:
+  messages:
+    en: "Ask yourself if what you are doing today is getting you closer to the place you want to be tomorrow"
+    es: "Preguntate si lo que estas haciendo hoy te acerca al lugar en el que quieres estar manana"
